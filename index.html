@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vital Body Healing Spa &amp; Salon | Ventura, CA</title>
+<meta name="description" content="Vital Body Healing Spa &amp; Salon in Ventura, CA — massage, facials, body treatments, hair care and waxing. A place of transformation. Book your visit today.">
+<meta property="og:title" content="Vital Body Healing Spa & Salon">
+<meta property="og:description" content="A place of transformation. Massage, facials, hair care, body treatments and waxing in Ventura, CA.">
+<meta property="og:image" content="images/logo.png">
+<link rel="icon" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal: #2C4E4F;
+    --teal-dark: #1C3435;
+    --ink: #171512;
+    --ivory: #FAF6EF;
+    --ivory-warm: #F2ECDF;
+    --brass: #B08D57;
+    --brass-light: #D6BC8B;
+    --sage: #7C8B75;
+    --line: rgba(23,21,18,0.12);
+    --shadow: 0 20px 50px rgba(23,21,18,0.14);
+    --radius-lg: 28px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--ivory);
+    color: var(--ink);
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    margin: 0;
+    color: var(--teal-dark);
+  }
+  a{ color: inherit; text-decoration: none; }
+  img{ max-width: 100%; display:block; }
+  .eyebrow{
+    font-family:'Jost', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--brass);
+  }
+  .wrap{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  :focus-visible{
+    outline: 2px solid var(--brass);
+    outline-offset: 3px;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{ animation: none !important; transition: none !important; }
+  }
+
+  /* ---------- NAV ---------- */
+  header.site-nav{
+    position: fixed; top:0; left:0; right:0; z-index: 100;
+    background: rgba(250,246,239,0.0);
+    transition: background 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease;
+    padding: 22px 0;
+  }
+  header.site-nav.scrolled{
+    background: rgba(250,246,239,0.92);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 0 var(--line);
+    padding: 12px 0;
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between; gap: 24px;
+  }
+  .nav-brand{ display:flex; align-items:center; gap:12px; }
+  .nav-brand img{ height: 42px; width:auto; transition: height 0.3s ease; }
+  header.site-nav.scrolled .nav-brand img{ height: 34px; }
+  .nav-links{
+    display:flex; align-items:center; gap: 34px;
+    font-size: 0.92rem; letter-spacing: 0.02em;
+  }
+  .nav-links a{ position: relative; padding: 4px 0; color: var(--teal-dark); }
+  .nav-links a::after{
+    content:""; position:absolute; left:0; right:0; bottom:-2px; height:1px;
+    background: var(--brass); transform: scaleX(0); transform-origin: left;
+    transition: transform 0.25s ease;
+  }
+  .nav-links a:hover::after{ transform: scaleX(1); }
+  .nav-phone{ display:flex; align-items:center; gap:10px; font-size:0.92rem; }
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    padding: 13px 30px;
+    border-radius: 999px;
+    font-family:'Jost', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor:pointer;
+    border: 1px solid transparent;
+    transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, border-color .25s ease;
+  }
+  .btn-primary{ background: var(--teal-dark); color: var(--ivory); }
+  .btn-primary:hover{ background: var(--brass); transform: translateY(-2px); }
+  .btn-ghost{ background: transparent; color: var(--ivory); border-color: rgba(250,246,239,0.6); }
+  .btn-ghost:hover{ background: rgba(250,246,239,0.14); border-color: var(--ivory); }
+  .btn-outline-dark{ background: transparent; color: var(--teal-dark); border-color: var(--teal-dark); }
+  .btn-outline-dark:hover{ background: var(--teal-dark); color: var(--ivory); }
+  .nav-cta{ display:none; }
+  @media (min-width: 860px){ .nav-cta{ display:inline-flex; } }
+  .mobile-toggle{
+    display:flex; background:none; border:none; cursor:pointer; padding: 6px;
+  }
+  @media (min-width: 860px){ .mobile-toggle{ display:none; } }
+  .nav-links{ display:none; }
+  @media (min-width: 860px){ .nav-links{ display:flex; } }
+  .mobile-panel{
+    display:none; flex-direction:column; gap:18px;
+    background: var(--ivory); padding: 26px 32px 34px;
+    border-top: 1px solid var(--line);
+  }
+  .mobile-panel.open{ display:flex; }
+  @media (min-width:860px){ .mobile-panel{ display:none !important; } }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position: relative;
+    min-height: 100svh;
+    display:flex; align-items:flex-end;
+    overflow:hidden;
+    background: var(--teal-dark);
+  }
+  .hero-media{
+    position:absolute; inset:0;
+  }
+  .hero-media img{
+    width:100%; height:100%; object-fit: cover; object-position: center 35%;
+    filter: saturate(0.92);
+  }
+  .hero-media::after{
+    content:"";
+    position:absolute; inset:0;
+    background:
+      radial-gradient(ellipse at 25% 20%, rgba(44,78,79,0.15), transparent 55%),
+      linear-gradient(180deg, rgba(23,21,18,0.55) 0%, rgba(23,21,18,0.32) 38%, rgba(28,52,53,0.86) 100%);
+  }
+  .hero-content{
+    position:relative; z-index:2;
+    width:100%;
+    padding: 160px 0 88px;
+    color: var(--ivory);
+  }
+  .hero-mark{
+    width: 78px; height:78px; border-radius:50%;
+    border: 1px solid rgba(250,246,239,0.55);
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom: 34px;
+  }
+  .hero-mark img{ width: 46px; height:auto; filter: invert(1) brightness(2); opacity:0.92; }
+  .hero h1{
+    color: var(--ivory);
+    font-size: clamp(2.6rem, 6vw, 4.6rem);
+    line-height: 1.04;
+    max-width: 16ch;
+    font-weight: 500;
+  }
+  .hero h1 em{ font-style: italic; color: var(--brass-light); }
+  .hero p.lede{
+    max-width: 46ch;
+    margin-top: 22px;
+    font-size: 1.08rem;
+    color: rgba(250,246,239,0.86);
+  }
+  .hero-actions{ display:flex; flex-wrap:wrap; gap:16px; margin-top: 38px; }
+  .hero-bottom-row{
+    position:relative; z-index:2;
+    border-top: 1px solid rgba(250,246,239,0.22);
+    padding: 22px 0;
+    display:flex; flex-wrap:wrap; gap: 14px 40px; justify-content:space-between; align-items:center;
+    color: rgba(250,246,239,0.78);
+    font-size: 0.86rem;
+  }
+  .hero-bottom-row .item{ display:flex; align-items:center; gap:10px; }
+  .dot{ width:5px; height:5px; border-radius:50%; background: var(--brass-light); display:inline-block; }
+
+  /* ---------- SECTION HELPERS ---------- */
+  section{ padding: 110px 0; position: relative; }
+  .section-head{ max-width: 640px; margin-bottom: 56px; }
+  .section-head h2{ font-size: clamp(2rem, 3.6vw, 2.9rem); margin-top:14px; }
+  .section-head p{ margin-top: 16px; color: rgba(23,21,18,0.68); font-size:1.02rem; }
+
+  /* ---------- INTRO / PHILOSOPHY ---------- */
+  .intro{ background: var(--ivory); }
+  .intro-grid{
+    display:grid; grid-template-columns: 1fr; gap: 56px; align-items:center;
+  }
+  @media (min-width: 880px){ .intro-grid{ grid-template-columns: 0.9fr 1.1fr; gap: 80px; } }
+  .intro-figure{
+    position: relative;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    max-width: 420px;
+  }
+  .intro-figure img{ width:100%; height:100%; object-fit:cover; }
+  .intro-figure::after{
+    content:"";
+    position:absolute; inset:-18px;
+    border: 1px solid var(--brass-light);
+    border-radius: 50%;
+    z-index:-1;
+  }
+  .intro-text .eyebrow{ margin-bottom: 14px; display:block; }
+  .intro-text h2{ font-size: clamp(1.9rem, 3.2vw, 2.6rem); }
+  .intro-text p{ margin-top: 22px; color: rgba(23,21,18,0.72); font-size: 1.04rem; max-width: 52ch; }
+  .intro-signature{
+    margin-top: 30px; font-family:'Cormorant Garamond', serif; font-style: italic;
+    font-size: 1.2rem; color: var(--teal);
+  }
+
+  /* ---------- SERVICES ---------- */
+  .services{ background: var(--teal-dark); color: var(--ivory); }
+  .services .section-head p{ color: rgba(250,246,239,0.72); }
+  .services .eyebrow{ color: var(--brass-light); }
+  .service-grid{
+    display:grid; grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+    gap: 1px; background: rgba(250,246,239,0.14);
+    border: 1px solid rgba(250,246,239,0.14);
+    border-radius: 20px; overflow:hidden;
+  }
+  .service-card{
+    background: var(--teal-dark);
+    padding: 40px 30px;
+    transition: background 0.3s ease;
+    cursor: default;
+  }
+  .service-card:hover{ background: rgba(44,78,79,0.6); }
+  .service-mark{
+    width: 46px; height: 46px; border-radius:50%;
+    border: 1px solid var(--brass-light);
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom: 22px;
+    font-family:'Cormorant Garamond', serif; font-style: italic; color: var(--brass-light);
+    font-size: 1.15rem;
+  }
+  .service-card h3{ color: var(--ivory); font-size: 1.4rem; }
+  .service-card p{ margin-top: 10px; color: rgba(250,246,239,0.68); font-size: 0.94rem; }
+  .service-card .price{
+    display:block; margin-top: 18px; font-size: 0.78rem; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--brass-light);
+  }
+
+  /* ---------- GALLERY ---------- */
+  .gallery{ background: var(--ivory-warm); }
+  .gallery-grid{
+    display:grid; grid-template-columns: 1.3fr 1fr; gap: 26px; align-items:stretch;
+  }
+  @media (max-width: 780px){ .gallery-grid{ grid-template-columns: 1fr; } }
+  .gallery-main{
+    border-radius: var(--radius-lg); overflow:hidden; box-shadow: var(--shadow);
+    min-height: 360px;
+  }
+  .gallery-main img{ width:100%; height:100%; object-fit:cover; }
+  .gallery-side{
+    display:flex; flex-direction:column; gap: 26px; justify-content:center;
+  }
+  .gallery-note{
+    background: var(--ivory);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 34px;
+  }
+  .gallery-note .eyebrow{ display:block; margin-bottom: 12px; }
+  .gallery-note p{ color: rgba(23,21,18,0.7); }
+  .gallery-badge{
+    display:flex; align-items:center; gap:16px;
+    background: var(--teal-dark); color: var(--ivory);
+    border-radius: var(--radius-lg); padding: 28px 30px;
+  }
+  .gallery-badge .num{ font-family:'Cormorant Garamond', serif; font-size: 2.2rem; color: var(--brass-light); }
+  .gallery-badge .label{ font-size: 0.85rem; color: rgba(250,246,239,0.78); }
+
+  /* ---------- BOOKING ---------- */
+  .booking{ background: var(--ivory); }
+  .booking-shell{
+    display:grid; grid-template-columns: 0.85fr 1.15fr; gap: 0;
+    border-radius: var(--radius-lg);
+    overflow:hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--line);
+  }
+  @media (max-width: 900px){ .booking-shell{ grid-template-columns: 1fr; } }
+  .booking-aside{
+    background: var(--teal-dark); color: var(--ivory);
+    padding: 52px 42px;
+    display:flex; flex-direction:column; justify-content:space-between;
+  }
+  .booking-aside .eyebrow{ color: var(--brass-light); }
+  .booking-aside h2{ color: var(--ivory); font-size: 2rem; margin-top: 14px; }
+  .booking-aside p{ color: rgba(250,246,239,0.75); margin-top: 16px; font-size: 0.98rem; }
+  .booking-info{ margin-top: 40px; display:flex; flex-direction:column; gap: 18px; font-size:0.92rem; }
+  .booking-info .row{ display:flex; gap:14px; align-items:flex-start; }
+  .booking-info .ic{
+    width:34px; height:34px; border-radius:50%; border:1px solid rgba(250,246,239,0.4);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size: 0.85rem;
+  }
+  .booking-form{
+    background: var(--ivory);
+    padding: 52px 42px;
+  }
+  .steps-track{ display:flex; gap:8px; margin-bottom: 34px; }
+  .steps-track span{
+    height:3px; flex:1; background: var(--line); border-radius: 3px; overflow:hidden; position:relative;
+  }
+  .steps-track span::after{
+    content:""; position:absolute; inset:0; background: var(--brass);
+    transform: scaleX(0); transform-origin:left; transition: transform 0.35s ease;
+  }
+  .steps-track span.done::after,
+  .steps-track span.active::after{ transform: scaleX(1); }
+
+  .b-step{ display:none; }
+  .b-step.active{ display:block; animation: fadeUp 0.35s ease; }
+  @keyframes fadeUp{ from{ opacity:0; transform: translateY(8px);} to{ opacity:1; transform:none; } }
+
+  .b-step h3{ font-size: 1.5rem; margin-bottom: 6px; }
+  .b-step .sub{ color: rgba(23,21,18,0.6); font-size: 0.92rem; margin-bottom: 24px; }
+
+  .service-options{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 480px){ .service-options{ grid-template-columns: 1fr; } }
+  .opt{
+    border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px;
+    cursor:pointer; transition: border-color 0.2s ease, background 0.2s ease;
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+  }
+  .opt:hover{ border-color: var(--brass); }
+  .opt.selected{ border-color: var(--brass); background: rgba(176,141,87,0.08); }
+  .opt span.name{ font-size: 0.96rem; }
+  .opt .radio{
+    width:16px; height:16px; border-radius:50%; border: 1px solid rgba(23,21,18,0.3); flex-shrink:0; position:relative;
+  }
+  .opt.selected .radio::after{
+    content:""; position:absolute; inset:3px; border-radius:50%; background: var(--brass);
+  }
+
+  .field-row{ display:grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  @media (max-width: 480px){ .field-row{ grid-template-columns: 1fr; } }
+  label{ font-size: 0.8rem; letter-spacing: 0.03em; color: rgba(23,21,18,0.65); display:block; margin-bottom:7px; }
+  input[type=text], input[type=email], input[type=tel], input[type=date], textarea, select{
+    width:100%; padding: 12px 14px; border-radius: 10px; border: 1px solid var(--line);
+    font-family:'Jost',sans-serif; font-size: 0.96rem; background: var(--ivory-warm);
+    color: var(--ink);
+  }
+  textarea{ resize: vertical; min-height: 90px; }
+  input:focus, textarea:focus, select:focus{ outline:none; border-color: var(--brass); background: #fff; }
+
+  .time-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 8px; }
+  @media (max-width:480px){ .time-grid{ grid-template-columns: repeat(2,1fr); } }
+  .slot{
+    padding: 10px 8px; border-radius: 10px; border: 1px solid var(--line);
+    text-align:center; font-size: 0.86rem; cursor:pointer; transition: all 0.2s ease;
+  }
+  .slot:hover{ border-color: var(--brass); }
+  .slot.selected{ background: var(--teal-dark); color: var(--ivory); border-color: var(--teal-dark); }
+
+  .b-actions{ display:flex; justify-content:space-between; align-items:center; margin-top: 30px; gap: 14px; }
+  .b-back{ background:none; border:none; color: rgba(23,21,18,0.55); cursor:pointer; font-size:0.88rem; padding: 8px 4px; }
+  .b-back:hover{ color: var(--ink); }
+  .btn-block{ width:100%; }
+  .hint-err{ color:#a1462f; font-size: 0.82rem; margin-top: 8px; display:none; }
+  .hint-err.show{ display:block; }
+
+  .b-summary{ background: var(--ivory-warm); border-radius: 14px; padding: 20px 22px; margin-bottom: 22px; font-size: 0.92rem; }
+  .b-summary div{ display:flex; justify-content:space-between; padding: 6px 0; border-bottom: 1px dashed var(--line); }
+  .b-summary div:last-child{ border-bottom:none; }
+  .b-summary .k{ color: rgba(23,21,18,0.55); }
+
+  .confirm-mark{
+    width:64px; height:64px; border-radius:50%; background: var(--teal-dark); color: var(--ivory);
+    display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond', serif;
+    font-size: 1.8rem; margin: 0 auto 22px;
+  }
+  .confirm-box{ text-align:center; padding: 20px 0 6px; }
+  .confirm-box p{ color: rgba(23,21,18,0.68); max-width: 40ch; margin: 10px auto 0; }
+
+  /* ---------- CONTACT / FOOTER ---------- */
+  footer{ background: var(--ink); color: rgba(250,246,239,0.85); padding: 70px 0 30px; }
+  .footer-grid{ display:grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 50px; }
+  @media (max-width: 760px){ .footer-grid{ grid-template-columns: 1fr; gap:36px; } }
+  .footer-brand img{ height: 44px; filter: invert(1) brightness(2); margin-bottom: 18px; }
+  .footer-brand p{ color: rgba(250,246,239,0.6); font-size:0.92rem; max-width: 34ch; }
+  footer h4{ color: var(--ivory); font-size: 1.05rem; margin-bottom: 18px; font-weight:500; }
+  footer ul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap: 12px; font-size:0.92rem; }
+  footer ul a{ color: rgba(250,246,239,0.72); }
+  footer ul a:hover{ color: var(--brass-light); }
+  .footer-bottom{
+    margin-top: 60px; padding-top: 24px; border-top: 1px solid rgba(250,246,239,0.12);
+    display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; font-size: 0.8rem; color: rgba(250,246,239,0.45);
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav" id="siteNav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="nav-brand">
+      <img src="images/logo.png" alt="Vital Body Healing Spa & Salon">
+    </a>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#gallery">The Space</a>
+      <a href="#book">Book</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:18px;">
+      <a href="tel:+18056436888" class="nav-phone" style="display:none;" id="navPhone">(805) 643-6888</a>
+      <a href="#book" class="btn btn-primary nav-cta">Book Now</a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#171512" stroke-width="1.6"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-panel" id="mobilePanel">
+    <a href="#services">Services</a>
+    <a href="#gallery">The Space</a>
+    <a href="#book">Book</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:+18056436888">(805) 643-6888</a>
+    <a href="#book" class="btn btn-primary" style="align-self:flex-start;">Book Now</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-media">
+      <img src="images/salon.png" alt="Interior of Vital Body Healing Spa & Salon in Ventura, showing the reception and treatment area">
+    </div>
+    <div class="wrap hero-content">
+      <div class="hero-mark"><img src="images/logo.png" alt=""></div>
+      <h1>A place of <em>transformation</em>,<br>for your body &amp; soul.</h1>
+      <p class="lede">Massage, facials, body treatments, hair care and waxing in the heart of Ventura — designed as a quiet pause in your week, not another errand.</p>
+      <div class="hero-actions">
+        <a href="#book" class="btn btn-primary">Book Your Visit</a>
+        <a href="tel:+18056436888" class="btn btn-ghost">Call (805) 643-6888</a>
+      </div>
+    </div>
+    <div class="wrap hero-bottom-row">
+      <div class="item"><span class="dot"></span>309 Borchard Dr, Ventura, CA</div>
+      <div class="item"><span class="dot"></span>Hair &middot; Body &middot; Massage &middot; Facials &middot; Waxing</div>
+      <div class="item"><span class="dot"></span>By appointment</div>
+    </div>
+  </section>
+
+  <section class="intro">
+    <div class="wrap intro-grid">
+      <div class="intro-figure">
+        <img src="images/salon.png" alt="A treatment chair inside Vital Body's Ventura studio">
+      </div>
+      <div class="intro-text">
+        <span class="eyebrow">Our Philosophy</span>
+        <h2>Wellness and beauty, held in the same hands.</h2>
+        <p>Vital Body was built as a space where the two rarely-separate halves of feeling good — how your body works, and how it looks — are cared for together. Every visit starts with a conversation, not a checklist, so your treatment plan fits the day you're actually having.</p>
+        <p>Whether you're here for a deep tissue release, a facial reset, or twenty quiet minutes away from your inbox, our aim is the same: you leave a little more like yourself.</p>
+        <p class="intro-signature">— The Vital Body team</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Services</span>
+        <h2>Five ways to feel restored.</h2>
+        <p>Every service is offered à la carte or built into a longer ritual. Ask us in-studio about pairing treatments.</p>
+      </div>
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-mark">1</div>
+          <h3>Hair Care</h3>
+          <p>Cuts, color and styling with attention to the health of the hair, not just the finish.</p>
+          <span class="price">Priced per service</span>
+        </div>
+        <div class="service-card">
+          <div class="service-mark">2</div>
+          <h3>Body Treatment</h3>
+          <p>Exfoliation, wraps and skin therapies that leave you feeling reset from the outside in.</p>
+          <span class="price">Priced per service</span>
+        </div>
+        <div class="service-card">
+          <div class="service-mark">3</div>
+          <h3>Massage</h3>
+          <p>Swedish, deep tissue and hot stone work, tailored to what your body is holding onto.</p>
+          <span class="price">Priced per service</span>
+        </div>
+        <div class="service-card">
+          <div class="service-mark">4</div>
+          <h3>Facials</h3>
+          <p>Custom facials built around your skin's actual needs, not a one-size routine.</p>
+          <span class="price">Priced per service</span>
+        </div>
+        <div class="service-card">
+          <div class="service-mark">5</div>
+          <h3>Waxing</h3>
+          <p>Quick, precise and gentle — in and out without the appointment eating your afternoon.</p>
+          <span class="price">Priced per service</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" id="gallery">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">The Space</span>
+        <h2>Ventura's quiet corner for slowing down.</h2>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-main">
+          <img src="images/salon.png" alt="Vital Body's studio with teal walls, plants and treatment chairs">
+        </div>
+        <div class="gallery-side">
+          <div class="gallery-badge">
+            <div class="num">5</div>
+            <div class="label">core services under<br>one roof</div>
+          </div>
+          <div class="gallery-note">
+            <span class="eyebrow">Location</span>
+            <p>Tucked on Borchard Drive with easy parking, our studio was designed to feel more like a friend's living room than a clinic.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="booking" id="book">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Book Your Visit</span>
+        <h2>Reserve your appointment.</h2>
+        <p>Tell us what you're looking for and when works — we'll confirm by phone or email within one business day.</p>
+      </div>
+
+      <div class="booking-shell">
+        <div class="booking-aside">
+          <div>
+            <span class="eyebrow">Vital Body</span>
+            <h2>Healing Spa &amp; Salon</h2>
+            <p>A place of transformation, in the heart of Ventura.</p>
+          </div>
+          <div class="booking-info">
+            <div class="row"><div class="ic">&#9742;</div><div>(805) 643-6888</div></div>
+            <div class="row"><div class="ic">&#9993;</div><div>jaweal@yahoo.com</div></div>
+            <div class="row"><div class="ic">&#9673;</div><div>309 Borchard Dr, Ventura, CA</div></div>
+          </div>
+        </div>
+
+        <div class="booking-form">
+          <div class="steps-track">
+            <span class="active" data-s="1"></span>
+            <span data-s="2"></span>
+            <span data-s="3"></span>
+          </div>
+
+          <form id="bookingForm" novalidate>
+            <!-- STEP 1: SERVICE -->
+            <div class="b-step active" data-step="1">
+              <h3>What are you booking?</h3>
+              <div class="sub">Choose one to start — you can add notes for anything else later.</div>
+              <div class="service-options" id="serviceOptions">
+                <div class="opt" data-value="Hair Care"><span class="name">Hair Care</span><span class="radio"></span></div>
+                <div class="opt" data-value="Body Treatment"><span class="name">Body Treatment</span><span class="radio"></span></div>
+                <div class="opt" data-value="Massage"><span class="name">Massage</span><span class="radio"></span></div>
+                <div class="opt" data-value="Facials"><span class="name">Facials</span><span class="radio"></span></div>
+                <div class="opt" data-value="Waxing"><span class="name">Waxing</span><span class="radio"></span></div>
+                <div class="opt" data-value="Not sure yet"><span class="name">Not sure yet</span><span class="radio"></span></div>
+              </div>
+              <div class="hint-err" id="err1">Please choose a service to continue.</div>
+              <div class="b-actions">
+                <span></span>
+                <button type="button" class="btn btn-primary" id="toStep2">Continue</button>
+              </div>
+            </div>
+
+            <!-- STEP 2: DATE & TIME -->
+            <div class="b-step" data-step="2">
+              <h3>Pick a date &amp; time</h3>
+              <div class="sub">Morning and afternoon slots shown — exact time confirmed when we call you back.</div>
+              <label for="apptDate">Preferred date</label>
+              <input type="date" id="apptDate" required>
+              <label style="margin-top:18px;">Preferred time</label>
+              <div class="time-grid" id="timeOptions">
+                <div class="slot" data-value="Morning (9–11am)">Morning</div>
+                <div class="slot" data-value="Midday (11am–2pm)">Midday</div>
+                <div class="slot" data-value="Afternoon (2–5pm)">Afternoon</div>
+              </div>
+              <div class="hint-err" id="err2">Please select a date and a time window.</div>
+              <div class="b-actions">
+                <button type="button" class="b-back" data-back="1">&larr; Back</button>
+                <button type="button" class="btn btn-primary" id="toStep3">Continue</button>
+              </div>
+            </div>
+
+            <!-- STEP 3: CONTACT INFO -->
+            <div class="b-step" data-step="3">
+              <h3>Your details</h3>
+              <div class="sub">So we can confirm the appointment.</div>
+              <div class="field-row">
+                <div>
+                  <label for="fname">Full name</label>
+                  <input type="text" id="fname" required>
+                </div>
+                <div>
+                  <label for="fphone">Phone</label>
+                  <input type="tel" id="fphone" required>
+                </div>
+              </div>
+              <label for="femail">Email</label>
+              <input type="email" id="femail" required>
+              <label for="fnotes" style="margin-top:16px;">Anything we should know?</label>
+              <textarea id="fnotes" placeholder="e.g. first time visiting, allergies, preferred technician..."></textarea>
+              <div class="hint-err" id="err3">Please fill in your name, phone and email.</div>
+              <div class="b-actions">
+                <button type="button" class="b-back" data-back="2">&larr; Back</button>
+                <button type="button" class="btn btn-primary" id="toReview">Review Request</button>
+              </div>
+            </div>
+
+            <!-- STEP 4: REVIEW / CONFIRM -->
+            <div class="b-step" data-step="4">
+              <h3>Confirm your request</h3>
+              <div class="sub">This sends your request to the studio — it isn't final until we confirm.</div>
+              <div class="b-summary" id="summaryBox"></div>
+              <button type="submit" class="btn btn-primary btn-block">Send Booking Request</button>
+              <div class="b-actions" style="justify-content:flex-start;">
+                <button type="button" class="b-back" data-back="3">&larr; Edit details</button>
+              </div>
+            </div>
+
+            <!-- STEP 5: DONE -->
+            <div class="b-step" data-step="5">
+              <div class="confirm-box">
+                <div class="confirm-mark">B</div>
+                <h3>Request sent.</h3>
+                <p>Your email app should have opened with your appointment request ready to send to the studio. Once you send it, we'll confirm your appointment by phone or email within one business day.</p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="Vital Body">
+        <p>A place of transformation. Healing spa &amp; salon services in Ventura, California.</p>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul>
+          <li>309 Borchard Dr, Ventura, CA</li>
+          <li><a href="tel:+18056436888">(805) 643-6888</a></li>
+          <li><a href="mailto:jaweal@yahoo.com">jaweal@yahoo.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">The Space</a></li>
+          <li><a href="#book">Book an Appointment</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Vital Body Healing Spa &amp; Salon. All rights reserved.</span>
+      <span>309 Borchard Dr, Ventura, CA</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Nav scroll state
+  const nav = document.getElementById('siteNav');
+  const navPhone = document.getElementById('navPhone');
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY > 40;
+    nav.classList.toggle('scrolled', scrolled);
+    navPhone.style.display = scrolled ? 'inline' : 'none';
+  });
+
+  // Mobile menu
+  const toggle = document.getElementById('mobileToggle');
+  const panel = document.getElementById('mobilePanel');
+  toggle.addEventListener('click', () => {
+    const open = panel.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => panel.classList.remove('open')));
+
+  // ---------------- BOOKING WIDGET ----------------
+  const state = { service: '', date: '', time: '', name: '', phone: '', email: '', notes: '' };
+
+  const steps = document.querySelectorAll('.b-step');
+  const track = document.querySelectorAll('.steps-track span');
+
+  function goTo(stepNum){
+    steps.forEach(s => s.classList.toggle('active', s.dataset.step === String(stepNum)));
+    track.forEach(t => {
+      const n = Number(t.dataset.s || 0);
+      t.classList.toggle('done', n < stepNum);
+      t.classList.toggle('active', n === stepNum);
+    });
+    document.querySelector('.booking-form').scrollIntoView({behavior:'smooth', block:'nearest'});
+  }
+
+  // Step 1: service select
+  document.querySelectorAll('#serviceOptions .opt').forEach(opt => {
+    opt.addEventListener('click', () => {
+      document.querySelectorAll('#serviceOptions .opt').forEach(o => o.classList.remove('selected'));
+      opt.classList.add('selected');
+      state.service = opt.dataset.value;
+      document.getElementById('err1').classList.remove('show');
+    });
+  });
+  document.getElementById('toStep2').addEventListener('click', () => {
+    if(!state.service){ document.getElementById('err1').classList.add('show'); return; }
+    goTo(2);
+  });
+
+  // Step 2: date + time
+  const dateInput = document.getElementById('apptDate');
+  const today = new Date().toISOString().split('T')[0];
+  dateInput.setAttribute('min', today);
+  document.querySelectorAll('#timeOptions .slot').forEach(slot => {
+    slot.addEventListener('click', () => {
+      document.querySelectorAll('#timeOptions .slot').forEach(s => s.classList.remove('selected'));
+      slot.classList.add('selected');
+      state.time = slot.dataset.value;
+      document.getElementById('err2').classList.remove('show');
+    });
+  });
+  document.getElementById('toStep3').addEventListener('click', () => {
+    state.date = dateInput.value;
+    if(!state.date || !state.time){ document.getElementById('err2').classList.add('show'); return; }
+    goTo(3);
+  });
+
+  // Step 3: contact
+  document.getElementById('toReview').addEventListener('click', () => {
+    state.name = document.getElementById('fname').value.trim();
+    state.phone = document.getElementById('fphone').value.trim();
+    state.email = document.getElementById('femail').value.trim();
+    state.notes = document.getElementById('fnotes').value.trim();
+    if(!state.name || !state.phone || !state.email){ document.getElementById('err3').classList.add('show'); return; }
+    document.getElementById('err3').classList.remove('show');
+
+    const dateDisplay = state.date ? new Date(state.date + 'T00:00:00').toLocaleDateString('en-US', { weekday:'long', year:'numeric', month:'long', day:'numeric' }) : '';
+    document.getElementById('summaryBox').innerHTML = `
+      <div><span class="k">Service</span><span>${state.service}</span></div>
+      <div><span class="k">Date</span><span>${dateDisplay}</span></div>
+      <div><span class="k">Time</span><span>${state.time}</span></div>
+      <div><span class="k">Name</span><span>${state.name}</span></div>
+      <div><span class="k">Phone</span><span>${state.phone}</span></div>
+      <div><span class="k">Email</span><span>${state.email}</span></div>
+    `;
+    goTo(4);
+  });
+
+  // Back buttons
+  document.querySelectorAll('[data-back]').forEach(btn => {
+    btn.addEventListener('click', () => goTo(Number(btn.dataset.back)));
+  });
+
+  // Final submit -> opens mail client with prefilled booking request
+  document.getElementById('bookingForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const dateDisplay = state.date ? new Date(state.date + 'T00:00:00').toLocaleDateString('en-US', { weekday:'long', year:'numeric', month:'long', day:'numeric' }) : '';
+    const subject = encodeURIComponent(`Appointment Request: ${state.service} — ${state.name}`);
+    const body = encodeURIComponent(
+`New appointment request from vitalbody.net
+
+Service: ${state.service}
+Preferred date: ${dateDisplay}
+Preferred time: ${state.time}
+
+Name: ${state.name}
+Phone: ${state.phone}
+Email: ${state.email}
+Notes: ${state.notes || '—'}`
+    );
+    window.location.href = `mailto:jaweal@yahoo.com?subject=${subject}&body=${body}`;
+    goTo(5);
+  });
+</script>
+
+</body>
+</html>
